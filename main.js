@@ -1,20 +1,35 @@
-var images = ["https://i.postimg.cc/MGn9GJXw/family.jpg","https://i.postimg.cc/qqyYvVbq/grandpa.jpg", "https://i.postimg.cc/wjMnFtMX/father.jpg" , "https://i.postimg.cc/5ymDKL83/bro.jpg", "https://i.postimg.cc/JnL6wtrd/sister.jpg", "https://i.postimg.cc/bw5W5zSK/mother.jpg"];
-var names = ["Fmaily Book","Ranbir Singh", "Diljeet Singh", "Rocky Singh", "Alia Singh", "Soni Singh"];
-var i = 0;
-function update()
-{
-    i++;
-    var numbers_of_family_member_in_array = 5
-    if(i > numbers_of_family_member_in_array)
-      {
-          i = 0;
-      }
+menu_list_array = ["Veg Margherita Pizza",
+                        "Chicken Tandoori Pizza",
+                        "Veg Supreme Pizza",
+                        "Paneer Tikka Pizza",
+                        "Deluxe Veggie Pizza",
+                        "Veg Extravaganza Pizza"];
     
-    //Debug the code to store list of images in updatedImage. Use images[i]
-    var images = images[i];
-    //Debug the code to store list of names in updatedName. Use names[i]
-    var names = names[i] ;
- 
-    document.getElementById("family_member_image").src = Images;
-    document.getElementById("family_member_name").innerHTML = Name;
+    function getmenu(){
+        var htmldata="";
+        menu_list_array.sort();
+        for(var i=0;i<menu_list_array.length;i++){
+            htmldata=htmldata+ menu_list_array[i] + '<br>'
+        }
+        document.getElementById("display_menu").innerHTML = htmldata;
+        //give the appropriate id name as display_menu 
+    }
+
+    function menu_list_array(){
+        var htmldata;
+		var imgtags='<img id="im1" src="pizzaImg.png">'
+        var item=document.getElementById("add_item").value;
+        // use the sort function as - menu_list_array.sort();
+        htmldata="";
+        for(var i=0;i<menu_list_array.length;i++){
+            htmldata=htmldata+imgtags+ menu_list_array[i]+'<br>';
+        }
+         document.getElementById("display_addedmenu").innerHTML = htmldata;
+		
+    }
+
+function add_top(){
+	var item=document.getElementById("add_item").value;
+    menu_list_array.push(item);
+	add_item();
 }
