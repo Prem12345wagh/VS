@@ -1,35 +1,49 @@
-menu_list_array = ["Veg Margherita Pizza",
-                        "Chicken Tandoori Pizza",
-                        "Veg Supreme Pizza",
-                        "Paneer Tikka Pizza",
-                        "Deluxe Veggie Pizza",
-                        "Veg Extravaganza Pizza"];
-    
-    function getmenu(){
-        var htmldata="";
-        menu_list_array.sort();
-        for(var i=0;i<menu_list_array.length;i++){
-            htmldata=htmldata+ menu_list_array[i] + '<br>'
-        }
-        document.getElementById("display_menu").innerHTML = htmldata;
-        //give the appropriate id name as display_menu 
-    }
+var canvas
+ block_y=1;
+ block_x=1;
 
-    function menu_list_array(){
-        var htmldata;
-		var imgtags='<img id="im1" src="pizzaImg.png">'
-        var item=document.getElementById("add_item").value;
-        // use the sort function as - menu_list_array.sort();
-        htmldata="";
-        for(var i=0;i<menu_list_array.length;i++){
-            htmldata=htmldata+imgtags+ menu_list_array[i]+'<br>';
-        }
-         document.getElementById("display_addedmenu").innerHTML = htmldata;
-		
-    }
+block_image_width = 350;
+block_image_height = 430;
 
-function add_top(){
-	var item=document.getElementById("add_item").value;
-    menu_list_array.push(item);
-	add_item();
+var block_image_object= "";
+
+function new_image(get_image)
+{
+	get_img=backg.jpg
 }
+
+window.addEventListener("keydown", my_keydown);
+
+function my_keydown(e)
+{
+keyPressed = e.keyCode;
+console.log(keyPressed);
+
+	if(keyPressed == '85') // add appropriate keycode
+	{
+		get_img=rr.jpg
+	}
+	if(keyPressed == '71')
+	{
+		block_x = 200;
+		get_img=gr.png
+	}
+	
+	if(keyPressed == '89')
+	{
+		block_x =350;
+		get_img=yr.png
+	}
+	if(keyPressed == '80')
+	{
+		block_x = 600;
+		get_img=pr.png
+	}
+	if(keyPressed == '66')
+	{
+		block_x = 700;
+	    get_img=br.png
+	}
+	
+}
+
